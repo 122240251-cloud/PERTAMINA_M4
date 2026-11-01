@@ -734,10 +734,30 @@
         <p class="text-dark small mb-2"><strong>Phone:</strong> +62234428977</p>
         <p class="text-dark small mb-4">
   <strong>Email:</strong> 
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=integrated.balongan@pertamina.com&su=Pesan%20dan%20Pertanyaan%20-%20Website%20Pertamina%20Balongan&body=Yth.%20Tim%20Pertamina%20RU%20VI%20Balongan,%0A%0ADengan%20hormat,%0A%0ASaya%20menghubungi%20pihak%20Pertamina%20RU%20VI%20Balongan%20untuk%20menyampaikan%20pertanyaan%20atau%20informasi%20terkait%20kegiatan,%20layanan,%20maupun%20produk%20Pertamina.%0A%0AAdapun%20hal%20yang%20ingin%20saya%20sampaikan%20adalah%20sebagai%20berikut:%0A%0A[Silakan%20tuliskan%20pesan%20atau%20pertanyaan%20Anda%20di%20sini]%0A%0ADemikian%20pesan%20ini%20saya%20sampaikan.%20Atas%20perhatian%20dan%20respons%20yang%20diberikan,%20saya%20mengucapkan%20terima%20kasih.%0A%0AHormat%20saya,%0A[Nama%20Pengirim]%0A[Nomor%20Telepon]%0A[Alamat%20Email]" target="_blank">
+  <a href="mailto:integrated.balongan@pertamina.com?subject=Pesan%20dan%20Pertanyaan%20-%20Website%20Pertamina%20Balongan&body=Yth.%20Tim%20Pertamina%20RU%20VI%20Balongan,%0A%0ADengan%20hormat,%0A%0ASaya%20menghubungi%20pihak%20Pertamina%20RU%20VI%20Balongan%20untuk%20menyampaikan%20pertanyaan%20atau%20informasi%20terkait%20kegiatan,%20layanan,%20maupun%20produk%20Pertamina.%0A%0AAdapun%20hal%20yang%20ingin%20saya%20sampaikan%20adalah%20sebagai%20berikut:%0A%0A[Silakan%20tuliskan%20pesan%20atau%20pertanyaan%20Anda%20di%20sini]%0A%0ADemikian%20pesan%20ini%20saya%20sampaikan.%20Atas%20perhatian%20dan%20respons%20yang%20diberikan,%20saya%20mengucapkan%20terima%20kasih.%0A%0AHormat%20saya,%0A[Nama%20Pengirim]%0A[Nomor%20Telepon]%0A[Alamat%20Email]" 
+     onclick="openEmail(event)">
     integrated.balongan@pertamina.com
   </a>
 </p>
+
+<script>
+function openEmail(event) {
+  // Deteksi jika pengguna membuka melalui HP/Tablet
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (!isMobile) {
+    // Jika di Laptop/PC, hentikan mailto dan buka Web Gmail di tab baru
+    event.preventDefault();
+    const to = "integrated.balongan@pertamina.com";
+    const subject = encodeURIComponent("Pesan dan Pertanyaan - Website Pertamina Balongan");
+    const body = encodeURIComponent("Yth. Tim Pertamina RU VI Balongan,\n\nDengan hormat,\n\nSaya menghubungi pihak Pertamina RU VI Balongan untuk menyampaikan pertanyaan atau informasi terkait kegiatan, layanan, maupun produk Pertamina.\n\nAdapun hal yang ingin saya sampaikan adalah sebagai berikut:\n\n[Silakan tuliskan pesan atau pertanyaan Anda di sini]\n\nDemikian pesan ini saya sampaikan. Atas perhatian dan respons yang diberikan, saya mengucapkan terima kasih.\n\nHormat saya,\n[Nama Pengirim]\n[Nomor Telepon]\n[Alamat Email]");
+    
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+  }
+  // Jika di HP, browser akan otomatis menjalankan link mailto bawaan
+}
+</script>
         
         <!-- Ikon Sosial Media Bulat dengan Link Asli -->
         <div class="social-links d-flex gap-2">
